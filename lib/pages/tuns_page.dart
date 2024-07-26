@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../widget/continar.dart';
+import 'package:touns_app/widget/continar.dart';
 
 class TounPage extends StatelessWidget {
   const TounPage({super.key});
@@ -29,18 +28,18 @@ class TounPage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: getTuneItems(),
+        children: TunsSong.map((Color) => TunseItem(color: Color)).toList(),
       ),
     );
   }
 
-  List<TunseItem> getTuneItems() {
-    List<TunseItem> itmes = [];
-    for (var color in TunsSong) {
-      itmes.add(TunseItem(
-        color: color,
-      ));
-    }
-    return itmes;
-  }
+  // List<TunseItem> getTuneItems() {
+  //   List<TunseItem> itmes = [];
+  //   for (var color in TunsSong) {
+  //     itmes.add(TunseItem(
+  //       color: color,
+  //     ));
+  //   }
+  //   return itmes;
+  // }
 }
