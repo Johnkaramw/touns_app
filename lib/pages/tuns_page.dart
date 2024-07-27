@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:touns_app/models/tune_model.dart';
 import 'package:touns_app/widget/continar.dart';
 
 class TounPage extends StatelessWidget {
   const TounPage({super.key});
-  final List<Color> TunsSong = const [
-    Color.fromARGB(255, 230, 176, 170),
-    Color.fromARGB(255, 221, 148, 143),
-    Color.fromARGB(255, 209, 119, 113),
-    Color.fromARGB(255, 214, 98, 90),
-    Colors.red,
-    Color.fromARGB(255, 235, 52, 42),
-    Color.fromARGB(255, 214, 45, 33),
-    Color.fromARGB(255, 245, 54, 40),
-    Color.fromARGB(255, 240, 28, 13),
-    Color.fromARGB(255, 255, 17, 0),
+  final List<TuneModel> Tunes = const [
+    TuneModel(color: Color.fromARGB(255, 230, 137, 126), sound: 'note1.wav'),
+    TuneModel(color: Color.fromARGB(255, 231, 128, 120), sound: 'note2.wav'),
+    TuneModel(color: Color.fromARGB(255, 235, 112, 103), sound: 'note3.wav'),
+    TuneModel(color: Color.fromARGB(255, 236, 96, 86), sound: 'note4.wav'),
+    TuneModel(color: Color.fromARGB(255, 241, 99, 89), sound: 'note5.wav'),
+    TuneModel(color: Color.fromARGB(255, 241, 74, 63), sound: 'note6.wav'),
+    TuneModel(color: Color.fromARGB(255, 224, 67, 56), sound: 'note7.wav'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class TounPage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: TunsSong.map((Color) => TunseItem(color: Color)).toList(),
+        children: Tunes.map((Color) => TunseItem(tune: Color)).toList(),
       ),
     );
   }
